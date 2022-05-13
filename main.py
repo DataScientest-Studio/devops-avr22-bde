@@ -39,3 +39,10 @@ def get_status():
 @api.get("/health")
 def get_health():
     return {"health": 1}
+
+
+@api.get("/bye")
+def get_bye():
+    return {
+        "bye": "bye"
+    }
