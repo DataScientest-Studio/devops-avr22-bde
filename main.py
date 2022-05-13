@@ -29,3 +29,8 @@ def post_mon_post():
     return {
         "method": "post"
     }
+
+
+@api.get("/status")
+def get_status():
+    return {"status": 1}
