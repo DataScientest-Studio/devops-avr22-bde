@@ -69,3 +69,11 @@ def test_get_health():
     # {"status": 1}
 
     assert data["health"] == 1, data
+
+
+def test_get_bye():
+    response = requests.get(
+        url=f"{API_URL}/bye"
+    )
+
+    assert response.status_code == 200, response.content
