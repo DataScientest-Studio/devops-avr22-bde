@@ -33,4 +33,4 @@ def post_mon_post():
 
 @api.get("/status")
 def get_status():
-    return {"status": 1}
+    return {"health": 1}
