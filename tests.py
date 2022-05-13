@@ -45,7 +45,7 @@ def test_post_mon_post():
     assert data["method"] == "post"
 
 
-def test_get_health():
+def test_get_status():
     response = requests.get(
         url=f"{API_URL}/status"
     )
@@ -56,3 +56,16 @@ def test_get_health():
     # {"status": 1}
 
     assert data["status"] == 1, data
+
+
+def test_get_health():
+    response = requests.get(
+        url=f"{API_URL}/health"
+    )
+
+    assert response.status_code == 200, response.content
+    data = response.json()
+
+    # {"status": 1}
+
+    assert data["health"] == 1, data
