@@ -43,3 +43,16 @@ def test_post_mon_post():
 
     assert "method" in data
     assert data["method"] == "post"
+
+
+def test_get_health():
+    response = requests.get(
+        url=f"{API_URL}/status"
+    )
+
+    assert response.status_code == 200, response.content
+    data = response.json()
+
+    # {"status": 1}
+
+    assert data["status"] == 1, data
